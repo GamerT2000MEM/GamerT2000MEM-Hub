@@ -129,6 +129,28 @@ local UICorner2 = Instance.new("UICorner")
 UICorner2.CornerRadius = UDim.new(0, 8)
 UICorner2.Parent = ContactsFrame
 
+-- Кликабельный Discord
+local DiscordButton = Instance.new("TextButton")
+DiscordButton.Text = "DISCORD: gamert2000mem"
+DiscordButton.Font = Enum.Font.GothamMedium
+DiscordButton.TextSize = 16
+DiscordButton.TextColor3 = Color3.fromRGB(88, 101, 242)
+DiscordButton.Size = UDim2.new(1, -20, 0, 25)
+DiscordButton.Position = UDim2.new(0, 10, 0, 5)
+DiscordButton.BackgroundTransparency = 1
+DiscordButton.Parent = ContactsFrame
+
+-- Кликабельный YouTube
+local YouTubeButton = Instance.new("TextButton")
+YouTubeButton.Text = "YOUTUBE: @GamerT2000MEM"
+YouTubeButton.Font = Enum.Font.GothamMedium
+YouTubeButton.TextSize = 16
+YouTubeButton.TextColor3 = Color3.fromRGB(255, 0, 0)
+YouTubeButton.Size = UDim2.new(1, -20, 0, 25)
+YouTubeButton.Position = UDim2.new(0, 10, 0, 30)
+YouTubeButton.BackgroundTransparency = 1
+YouTubeButton.Parent = ContactsFrame
+
 local DiscordLabel = Instance.new("TextLabel")
 DiscordLabel.Text = "DISCORD: gamert2000mem"
 DiscordLabel.Font = Enum.Font.GothamMedium
