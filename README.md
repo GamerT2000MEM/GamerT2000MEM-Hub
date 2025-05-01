@@ -7,4 +7,5 @@ Roblox скрипт для режима Lucky Block Battlegrounds
 - Поддержка Galaxy Block
 
 ## Установка
-loadstring(game:HttpGet("https://raw.githubusercontent.com/GamerT2000MEM/GamerT2000MEM-Hub/main/GamerT2000MEM-Hub.lua"))()
+Обычная версия loadstring(game:HttpGet("https://raw.githubusercontent.com/GamerT2000MEM/GamerT2000MEM-Hub/main/GamerT2000MEM-Hub.lua"))()
+Оптимизированная
