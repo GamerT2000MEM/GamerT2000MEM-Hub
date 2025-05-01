@@ -1,3 +1,18 @@
+local CURRENT_VERSION = "1.0"
+local VERSION_CHECK_URL = "https://raw.githubusercontent.com/Zayn31214/GamerT2000MEM-Hub/main/version.txt"
+
+-- Проверка обновлений
+local function checkForUpdates()
+    local success, response = pcall(function()
+        return game:HttpGet(VERSION_CHECK_URL)
+    end)
+    
+    if success and response ~= CURRENT_VERSION then
+        warn("Доступно обновление! Текущая версия: "..CURRENT_VERSION..", Новая: "..response)
+    end
+end
+
+checkForUpdates()
 -- GamerT2000MEM Royal Hub (ULTIMATE FIXED EDITION)
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
