@@ -1,3 +1,9 @@
+-- В начало файла GamerT2000MEM-Hub-Optimized.lua
+local CURRENT_VERSION = "1.2"
+if _G.GamerT2000MEM_Version and _G.GamerT2000MEM_Version >= CURRENT_VERSION then
+    return -- Не грузить повторно
+end
+_G.GamerT2000MEM_Version = CURRENT_VERSION
 -- GamerT2000MEM Hub (Optimized and Fixed Edition)
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
