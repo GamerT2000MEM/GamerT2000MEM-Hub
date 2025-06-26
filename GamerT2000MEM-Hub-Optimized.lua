@@ -1,18 +1,18 @@
--- GamerT2000MEM Hub (100% Working Optimized)
+-- GamerT2000MEM Hub (Optimized)
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local CoreGui = game:GetService("CoreGui")
 local UserInputService = game:GetService("UserInputService")
 
--- Version control
+
 if _G.GamerT2000MEM_Loaded then return end
 _G.GamerT2000MEM_Loaded = true
 
--- UI cleanup
+
 local oldUI = CoreGui:FindFirstChild("GamerT2000MEMHub")
 if oldUI then oldUI:Destroy() end
 
--- Main container
+
 local screenGui = Instance.new("ScreenGui")
 screenGui.Name = "GamerT2000MEMHub"
 screenGui.Parent = CoreGui
@@ -27,7 +27,7 @@ mainFrame.BorderSizePixel = 0
 mainFrame.Active = true
 mainFrame.Parent = screenGui
 
--- Title bar
+
 local titleBar = Instance.new("Frame")
 titleBar.Name = "TitleBar"
 titleBar.Size = UDim2.new(1, 0, 0, 30)
@@ -43,7 +43,7 @@ title.Font = Enum.Font.GothamBold
 title.TextSize = 16
 title.Parent = titleBar
 
--- Block types
+
 local blocks = {
     {Name = "Normal", Color = Color3.fromRGB(200, 200, 200)},
     {Name = "Super", Color = Color3.fromRGB(0, 200, 0)},
@@ -52,7 +52,7 @@ local blocks = {
     {Name = "Galaxy", Color = Color3.fromRGB(0, 0, 100)}
 }
 
--- Content container
+
 local container = Instance.new("ScrollingFrame")
 container.Name = "Container"
 container.Size = UDim2.new(1, 0, 1, -30)
@@ -62,7 +62,7 @@ container.ScrollBarThickness = 5
 container.CanvasSize = UDim2.new(0, 0, 0, #blocks * 70)
 container.Parent = mainFrame
 
--- Block spawn function
+
 local function spawnBlock(blockName)
     local remote = ReplicatedStorage:FindFirstChild("Spawn"..blockName.."Block")
     if remote then
@@ -73,7 +73,7 @@ local function spawnBlock(blockName)
     end
 end
 
--- Create buttons
+
 for i, block in ipairs(blocks) do
     local button = Instance.new("TextButton")
     button.Name = block.Name.."Btn"
@@ -91,7 +91,7 @@ for i, block in ipairs(blocks) do
     end)
 end
 
--- Drag system
+
 local dragging, dragStart, startPos = false
 
 titleBar.InputBegan:Connect(function(input)
