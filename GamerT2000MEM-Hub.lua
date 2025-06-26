@@ -17,12 +17,11 @@ local UserInputService = game:GetService("UserInputService")
 local RunService = game:GetService("RunService")
 local TweenService = game:GetService("TweenService")
 
--- Удаляем старые GUI
+
 if CoreGui:FindFirstChild("GamerT2000MEMHub") then
     CoreGui.GamerT2000MEMHub:Destroy()
 end
 
--- Создаем GUI
 local GamerT2000MEMHub = Instance.new("ScreenGui")
 GamerT2000MEMHub.Name = "GamerT2000MEMHub"
 GamerT2000MEMHub.Parent = CoreGui
@@ -36,7 +35,7 @@ MainFrame.Position = UDim2.new(0.35, 0, 0.3, 0)
 MainFrame.Size = UDim2.new(0, 350, 0, 400)
 MainFrame.Active = true
 
--- Заголовок
+
 local TitleBar = Instance.new("Frame")
 TitleBar.Name = "TitleBar"
 TitleBar.Size = UDim2.new(1, 0, 0, 40)
@@ -63,7 +62,7 @@ MinimizeBtn.Font = Enum.Font.GothamBold
 MinimizeBtn.TextSize = 24
 MinimizeBtn.Parent = TitleBar
 
--- Все типы блоков
+
 local blocks = {
     {Name = "Normal", Color = Color3.fromRGB(200, 200, 200)},
     {Name = "Super", Color = Color3.fromRGB(0, 200, 0)},
@@ -72,7 +71,7 @@ local blocks = {
     {Name = "Galaxy", Color = Color3.fromRGB(0, 0, 100), Remotes = {"SpawnGalaxyBlock", "GalaxyBlockEvent"}}
 }
 
--- Контейнер с прокруткой
+
 local Container = Instance.new("ScrollingFrame")
 Container.Name = "Container"
 Container.Size = UDim2.new(1, 0, 1, -40)
@@ -82,7 +81,7 @@ Container.ScrollBarThickness = 8
 Container.CanvasSize = UDim2.new(0, 0, 0, #blocks * 80)
 Container.Parent = MainFrame
 
--- Улучшенная функция спавна
+
 local function spawnBlock(blockData)
     local remotes = blockData.Remotes or {"Spawn"..blockData.Name.."Block"}
     
@@ -99,7 +98,7 @@ local function spawnBlock(blockData)
     return false
 end
 
--- Создаем кнопки
+
 for i, block in ipairs(blocks) do
     local btn = Instance.new("TextButton")
     btn.Name = block.Name.."Btn"
@@ -117,7 +116,7 @@ for i, block in ipairs(blocks) do
     end)
 end
 
--- Система перетаскивания
+
 local dragging, dragStart, startPos
 
 TitleBar.InputBegan:Connect(function(input)
@@ -141,7 +140,7 @@ UserInputService.InputChanged:Connect(function(input)
     end
 end)
 
--- Сворачивание/разворачивание с анимацией
+
 local minimized = false
 MinimizeBtn.MouseButton1Click:Connect(function()
     minimized = not minimized
@@ -158,7 +157,7 @@ MinimizeBtn.MouseButton1Click:Connect(function()
     end
 end)
 
--- Автокоррекция позиции
+
 RunService.Heartbeat:Connect(function()
     local viewport = workspace.CurrentCamera.ViewportSize
     local pos = MainFrame.AbsolutePosition
